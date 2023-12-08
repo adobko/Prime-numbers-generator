@@ -32,7 +32,7 @@ using namespace std;
      bool validName = false;
      do {
          cout << "Input export filename: ";
-         cin >> name;
+         getline(cin, name);
          if (!regex_match(name, nameValidation)) {
              cout << "Invalid filename!\n";
              cin.clear();
@@ -82,7 +82,7 @@ int main()
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
             }
             else {
-                switch (choice) {
+                switch (tolower(choice)) {
                 case 'y': ExportToTXT(output); break;
                 case 'n': break;
                 default: cout << "Please input y or n!\n"; continue;
